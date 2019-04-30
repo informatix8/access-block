@@ -1,5 +1,5 @@
 {
-  "name": "access-block",
+  "name": "@informatix8/access-block",
   "version": "0.1.0",
   "title": "Access Block",
   "description": "Block user interactions",
