@@ -69,3 +69,4 @@ Icon
 .gitignore.rej
 .project
 package-lock.json
+public/bundle.js.map
