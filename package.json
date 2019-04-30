@@ -1,0 +1,47 @@
+{
+  "name": "access-block",
+  "version": "0.1.0",
+  "title": "Access Block",
+  "description": "Block user interactions",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:informatix8/access-block.git"
+  },
+  "author": "Mjr",
+  "contributors": [
+    "Mjr <mjr@informatix.io>"
+  ],
+  "license": "ISC",
+  "main": "dist/access-block.cjs.js",
+  "module": "dist/access-block.esm.js",
+  "browser": "dist/access-block.umd.js",
+  "dependencies": {
+    "lodash.merge": "^4.6.1",
+    "short-unique-id": "^1.1.1"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5",
+    "jshint": "^2.10.2",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.5.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-uglify": "git://github.com/mishoo/UglifyJS2#harmony",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "serve": "^11.0.0",
+    "ub-jsdoc": "^1.7.3"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel _start _watch",
+    "build": "rollup -c && npm run _lint && npm run _jsdoc",
+    "_start": "serve public",
+    "_watch": "rollup -c -w",
+    "_lint_global": "jshint ./src",
+    "_lint": "node ./node_modules/jshint/dist/jshint.js ./src",
+    "_jsdoc": "node ./node_modules/jsdoc/jsdoc.js -c jsdoc.conf.json"
+  },
+  "files": [
+    "dist"
+  ]
+}
