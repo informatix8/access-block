@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Access Block Demo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+
+            .access-block-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .access-block-interior {
+                display: block;
+                width: 200px;
+                text-align: center;
+            }
+
+            .access-block-image {
+                display: block;
+                margin: 0 auto;
+                width: 48px;
+                height: 48px;
+                fill: white;
+            }
+
+            .access-block-title {
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 20px;
+            }
+
+            .access-block-description {
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+        </style>
+    </head>
+    <body class="bg-light">
+        <div class="container">
+            <div class="py-5">
+                <button id="trigger1" class="btn btn-primary">Open one for 3 sec</button>
+                <button id="trigger2" class="btn btn-primary">Open two for 3 sec</button>
+            </div>
+            <div class="py-5">
+                <h2>Access Block Demo</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Billing address</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">First name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Last name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Your username is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="bundle.js"></script>
+    <script>
+        (function (AccessBlock) {
+            var trigger1, trigger2;
+
+            trigger1 = document.getElementById('trigger1');
+            trigger1.addEventListener('click', function () {
+                var accessBlock1;
+                accessBlock1 = new AccessBlock({
+                    focusAfterClose: '#firstName',
+                    overlayOpacity: 0.4,
+                    title: 'First one',
+                    description: 'Please wait...',
+                    callbacks: {
+                        preOpen: function() {
+                            console.log('Opened');
+                        }
+                    }
+                });
+                accessBlock1.open();
+                setTimeout(function () {
+                    accessBlock1.close();
+                }, 3000);
+            });
+
+            trigger2 = document.getElementById('trigger2');
+            trigger2.addEventListener('click', function () {
+                var accessBlock1, accessBlock2;
+
+                accessBlock1 = new AccessBlock({
+                    overlayOpacity: 0.4,
+                    title: 'First one',
+                    description: 'Please wait...'
+                });
+
+                accessBlock2 = new AccessBlock({
+                    zIndex: 1,
+                    overlayOpacity: 0.8,
+                    title: 'Second one',
+                    description: 'Please wait...'
+                });
+
+                accessBlock1.open();
+                setTimeout(function () {
+                    accessBlock2.open();
+                }, 2000);
+
+                setTimeout(function () {
+                    accessBlock1.close();
+                }, 5000);
+
+                setTimeout(function () {
+                    accessBlock2.close();
+                }, 7000);
+            });
+
+        }(window.AccessBlock));
+    </script>
+</html>
