@@ -29,10 +29,6 @@ export default [
 
     {
         input: 'src/js/main.js',
-        external: [
-            'short-unique-id',
-            'lodash.merge'
-        ],
         output: {
             name: 'AccessBlock',
             file: pkg.browser,
