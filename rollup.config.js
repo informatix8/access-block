@@ -52,7 +52,7 @@ export default [
     {
         input: 'src/js/main.js',
         output: {
-            name: 'AccessDropdown',
+            name: 'AccessBlock',
             file: 'dist/access-block.all.umd.js',
             format: 'umd',
             compact: true
