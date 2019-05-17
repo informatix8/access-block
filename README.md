@@ -45,6 +45,34 @@ trigger.addEventListener('click', function () {
 });
 ```
 
+## Example Styles
+
+```css
+.access-block-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.access-block-interior {
+    display: block;
+    text-align: center;
+    width: 12.5rem;
+}
+
+.access-block-image {
+    display: block;
+    fill: #fff;
+    height: 3rem;
+    margin: 0 auto;
+    width: 3rem;
+}
+
+.access-block-title {
+    font-size: 2rem;
+}
+```
+
 ## Development
 
 ```shell
