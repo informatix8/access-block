@@ -23,7 +23,7 @@ npm install @informatix8/access-block --save-dev
 ### CDN
 
 ```html
-<script src="https://unpkg.com/@informatix8/access-block/dist/access-block.umd.js"></script>
+<script src="https://unpkg.com/@informatix8/access-block/dist/access-block.all.umd.js"></script>
 ```
 
 ### Vanilla Javascript
