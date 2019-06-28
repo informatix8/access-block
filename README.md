@@ -2,11 +2,13 @@
 
 Full page loading screen that blocks user interactions.
 
+Examples and the API are in the [documentation](https://access-block.com).
+
 ## Features
-- Disallows mouse scrolling, clicking, and focus movement within the body via `Tab` key while open
+- Disallows mouse scrolling, clicking, and focus movement within the body via <kbd>Tab</kbd> key while open
 - Cannot be closed by the user. It must be programmatically closed.
 - Disallows all other body content from being read with a screen reader via `aria-hidden`
-- Allows focus to escape to the browser with `Shift` + `Tab`
+- Allows focus to escape to the browser with <kbd>Shift</kbd> + <kbd>Tab</kbd>
 - Uses ARIA role `alertdialog`,  `aria-describedby` and `aria-labelledby` to properly notify screen readers
 - Inline styles can be disabled
 - After dismissal, focus is returned to the last focused element or a designated element
