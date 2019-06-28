@@ -15,7 +15,7 @@ export default [
         output: {
             name: 'AccessBlock',
             file: 'public/bundle.js',
-            format: 'iife', // immediately-invoked function expression — suitable for <script> tags
+            format: 'iife',
             sourcemap: true
         },
         plugins: [
