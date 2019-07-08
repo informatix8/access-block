@@ -1,9 +1,6 @@
 import ShortUniqueId from 'short-unique-id';
 import merge from 'lodash.merge';
 
-/**
- *
- */
 class AccessBlock {
     /**
      @class AccessBlock
