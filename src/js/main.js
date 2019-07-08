@@ -22,7 +22,7 @@ class AccessBlock {
      @param {String} [options.cssClassMap.title="access-block-title"] - Title element
      @param {String} [options.cssClassMap.description="access-block-description"] - Description element
      @param {String} [options.cssClassMap.image="access-block-image"] - Image loader element
-     @param {String} [options.cssClassMap.ariaHidden="access-block-aria-hidden"] - Aria hidden element, will contain all body content when AccessDropdown is opened
+     @param {String} [options.cssClassMap.ariaHidden="access-block-aria-hidden"] - Aria hidden element, will contain all body content when AccessBlock is opened
      @param {Object} [options.callbacks] - User supplied functions to execute at given stages of the component lifecycle
      @param {Object} [options.focusableSelectorList] - Selector of elements, that may get focus
      @param {Function} options.callbacks.preOpen
